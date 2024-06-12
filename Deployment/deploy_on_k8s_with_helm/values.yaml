@@ -11,7 +11,7 @@ global:
 
   # A service account name to use for this chart and all subcharts. If this is set, then
   # dagster subcharts will not create their own service accounts.
-  serviceAccountName: ""
+  serviceAccountName: "k8s-digdag-server"
 
   # The name for the secret used to pass Celery broker and backend connection urls. This can
   # generally be left as the default, but can be useful if setting generateCeleryConfigSecret
@@ -314,7 +314,7 @@ dagster-user-deployments:
       # deployment pod.
       dagsterApiGrpcArgs:
         - "--python-file"
-        - "/example_project/example_repo/repo.py"
+        - "/my_project/example_repo/repo.py"
       port: 3030
 
       # Whether or not to include configuration specified for this user code deployment in the pods
